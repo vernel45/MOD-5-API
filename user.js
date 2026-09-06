@@ -1,7 +1,16 @@
 const postListEl = document.querySelector(".post-list");
 
-function onSearchChange(event) {
-    console.log(event)
+async function onSearchChange(event) {
+  const id = event.target.value;
+  renderPosts(id);
+}
+async function renderPosts(id) {
+  const posts = await fetch(
+    `https://jsonplaceholder.typicode.com/posts?userId=${id}`
+  );
+
+  const postsData = await posts.json();
+  console.log(postsData);
 }
 
 async function main() {
