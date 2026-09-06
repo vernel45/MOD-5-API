@@ -10,6 +10,20 @@ async function renderPosts(id) {
   );
 
   const postsData = await posts.json();
+  postListEl.innerHTML = postsData
+  .map(
+    (post) => `
+      <div class="post">
+        <div class="post__title">
+          ${post.title}
+        </div>
+        <p class="post__body">
+          ${post.body}
+        </p>
+      </div>
+    `
+  )
+  .join("");
   console.log(postsData);
 }
 
