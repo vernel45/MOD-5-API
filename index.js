@@ -10,8 +10,9 @@ async function main() {
 
 main();
 
-function showUserPosts(user) {
-  console.log(user);
+function showUserPosts(id) {
+    window.location.href = `http://127.0.0.15500/user.html`;
+  console.log(id);
 }
 
 function userHTML(user) {
