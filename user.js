@@ -27,8 +27,8 @@ async function renderPosts(id) {
   console.log(postsData);
 }
 
-async function main() {
-  const id = localStorage.getItem("id");
+async function renderPosts() {
+ 
   const posts = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${id}`);
   const postsData = await posts.json();
   console.log(postsData);
